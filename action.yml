@@ -1,9 +1,15 @@
 name: 'Setup npmrc'
 description: 'Greet someone and record the time'
 inputs:
+  registry:
+    description: 'The registry host to set'
+    required: true
+  scope:
+    description: 'The npm scope to set the registry for'
+    required: true
   token:
     description: 'Auth token to authenticate with'
     required: true
 runs:
-  using: 'node14'
+  using: 'node12'
   main: 'index.js'
