@@ -3,7 +3,6 @@ const path = require("path");
 const core = require("@actions/core");
 
 const makeNpmrc = (registry, scope, token) => `
-@${scope}:registry=${registry}
 always-auth=true
 _auth=${token}
 `;
