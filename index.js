@@ -11,8 +11,9 @@ try {
   const registry = core.getInput("registry");
   const scope = core.getInput("scope");
   const token = core.getInput("token");
+  const writePath = core.getInput("write-path") || process.cwd();
   const contents = makeNpmrc(registry, scope, token);
-  fs.writeFileSync(".npmrc", contents);
+  fs.writeFileSync(`${writePath}.npmrc`, contents);
 } catch (error) {
   core.setFailed(error.message);
 }
