@@ -13,7 +13,6 @@ try {
   const scope = core.getInput("scope");
   const token = core.getInput("token");
   const contents = makeNpmrc(registry, scope, token);
-  console.log("🤦‍♂️🤦‍♂️🤦‍♂️", contents);
   fs.writeFileSync(".npmrc", contents);
 } catch (error) {
   core.setFailed(error.message);
